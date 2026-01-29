@@ -14,7 +14,7 @@ namespace KamosevaLOGITge25KonspektKordaTehtud // <-- nimeruum, sisaldab {} sulg
 
             //--------------------------------------------------------------------//
 
-            /*           ---===         T E O O R I A        ===---            */
+            /*           ---===         T E O O R I A        ===---              */
 
             //--------------------------------------------------------------------//
 
@@ -208,7 +208,7 @@ namespace KamosevaLOGITge25KonspektKordaTehtud // <-- nimeruum, sisaldab {} sulg
 
 
 
-            /*    -= T I N GG I M U S L A U S E - SWITCHCASE =-     */
+            /*    -= T I N G I M U S L A U S E - SWITCHCASE =-     */
             /*
             int option = 3;  //------
             switch (option)  // "switch" on kaitstud sõna alternatiivse tingimuskontrolli jaoks mida saab if-elseif-else asemel kasutada. Sulgude vahele käib muutuja nimi, mille põhjal
@@ -454,7 +454,7 @@ namespace KamosevaLOGITge25KonspektKordaTehtud // <-- nimeruum, sisaldab {} sulg
             */
 
 
-            ///* näiteülesanne 7 - kalkulaator */
+            /* näiteülesanne 7 - kalkulaator */
             /*
             Console.WriteLine("Palun sisesta esimene arv");
             float arv1 = 0.0f;
@@ -505,8 +505,8 @@ namespace KamosevaLOGITge25KonspektKordaTehtud // <-- nimeruum, sisaldab {} sulg
             {
                 Console.WriteLine($"Tehte tulemus on: {arv1} {tehteTüüp} {arv2} = {tulemus}");
             }
+            
             */
-
 
 
             /* näiteülesanne 8 */
@@ -552,7 +552,45 @@ namespace KamosevaLOGITge25KonspektKordaTehtud // <-- nimeruum, sisaldab {} sulg
                 " \nlastekeskmine on " + Math.Round(lastekeskmine, 2) + "m. Kahe keskmise vahe on " + Math.Round(vahe, 2) + "m.");
             */
 
+            /* näidisülesanne 9 */
 
+            int suunaKood = 0;
+            // "int" näitab et me määrame täisarvu tüüpi muutuja
+            // "suunaKood" - uue muutuja nimi
+            // "=" abil omistame muutujale suunaKood algväärtuse
+            // 0 - suunaKood muutuja algväärtus
+            // ; lõpetab käsurea/lause
+            Console.WriteLine("Palun sisesta oma suunakood");
+            // Console moodul seostab käsurea kasutajaga tekstipõhise konsooliakna kaudu
+            // . näitab et järgmine osa (WriteLine) kuulub enne täppi olevale moodulile (Console)
+            // WriteLine kuvab kasutajale antud teksti
+            // () sulgude vahel on andmed/parameeter, mis kuulub antud käsule
+            // "Palun sisesta oma suunakood" - kasutajale kuvav tekst
+            // ; lõpetab käsurea/lause
+            suunaKood = int.Parse(Console.ReadLine());
+            //suunaKood - muutuja, mida määrasime ennem
+            // "=" abil määrame sellele uue väärtuse
+            // "int" näitab et me töötame täsarvu tüüpi muutujaga
+            // . näitab et järgmine osa (Parse) kuulub enne täppi olevale moodulile (int)
+            // Parse vahetab muutuja tüüpi tekstist teise tüüpi vastu, sel juhul täisarvu (int)
+            // () Parse käsule kuuluvates sulgudes on parameeter, mida tahame parseerida
+            // Console moodul seostab käsurea kasutajaga tekstipõhise konsooliakna kaudu
+            // . näitab et järgmine osa (ReadLine) kuulub enne täppi olevale moodulile (Console)
+            // ReadLine "loeb" andmeid, mida kasutaja sisestab konsooliaknas
+            // () Readline kuuluvates sulgudes on andmed, millega me töötame. Aga neid sisestame mitte meie, vaid kasutaja
+            // ; lõpetab käsurea/lause
+            if (suunaKood > 9999 && suunaKood < 100000)
+            {
+                Console.WriteLine("Ahhaa, nyyd tean kus sa elad!");
+            }
+            else if (suunaKood <= 9999)
+            {
+                Console.WriteLine("yks taht on puudu");
+            }
+            else
+            {
+                Console.WriteLine("yks taht on yle");
+            }
 
         }
     }
