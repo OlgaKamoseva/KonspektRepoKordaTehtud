@@ -1,0 +1,110 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0" version="29.2.7">
+  <diagram name="Leht-1" id="HdqE7CfAginyiwfeaSLE">
+    <mxGraphModel dx="2066" dy="1139" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="7-nQah4uW7wYO3JxTKnM-3" edge="1" parent="1" source="7-nQah4uW7wYO3JxTKnM-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="7-nQah4uW7wYO3JxTKnM-2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7-nQah4uW7wYO3JxTKnM-1" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Algus" vertex="1">
+          <mxGeometry height="40" width="120" x="425" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="7-nQah4uW7wYO3JxTKnM-5" edge="1" parent="1" source="7-nQah4uW7wYO3JxTKnM-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="7-nQah4uW7wYO3JxTKnM-4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7-nQah4uW7wYO3JxTKnM-2" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Tekita muutuja, sõne andmetüübiga, &quot;kasutajaNimi, mille esialgne väärtus on tühi sõne.&quot;" vertex="1">
+          <mxGeometry height="80" width="270" x="350" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="7-nQah4uW7wYO3JxTKnM-7" edge="1" parent="1" source="7-nQah4uW7wYO3JxTKnM-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="7-nQah4uW7wYO3JxTKnM-6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7-nQah4uW7wYO3JxTKnM-4" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Tekita muutuja, sõne andmetüübiga, &quot;kasutajaParool&quot;, mille esialgne väärtus on tühi sõne" vertex="1">
+          <mxGeometry height="60" width="195" x="387.5" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="7-nQah4uW7wYO3JxTKnM-11" edge="1" parent="1" source="7-nQah4uW7wYO3JxTKnM-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="7-nQah4uW7wYO3JxTKnM-10" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7-nQah4uW7wYO3JxTKnM-6" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Kuva kasutajale tekst &quot;palun sisesta oma kasutajanmi&quot;" vertex="1">
+          <mxGeometry height="70" width="175" x="397.5" y="830" as="geometry" />
+        </mxCell>
+        <mxCell id="7-nQah4uW7wYO3JxTKnM-13" edge="1" parent="1" source="7-nQah4uW7wYO3JxTKnM-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="7-nQah4uW7wYO3JxTKnM-12" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7-nQah4uW7wYO3JxTKnM-10" parent="1" style="whiteSpace=wrap;html=1;" value="Oota kuni kasutaja sisestab oma kasutajanime, mis omistatakse muutujasse &quot;kasutajaNimi&quot;" vertex="1">
+          <mxGeometry height="70" width="195" x="387.5" y="1020" as="geometry" />
+        </mxCell>
+        <mxCell id="7-nQah4uW7wYO3JxTKnM-15" edge="1" parent="1" source="7-nQah4uW7wYO3JxTKnM-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="7-nQah4uW7wYO3JxTKnM-14" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7-nQah4uW7wYO3JxTKnM-12" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Kuva kasutajale tekst &quot;palun sisesta oma parool&quot;" vertex="1">
+          <mxGeometry height="65" width="237.5" x="366.25" y="1180" as="geometry" />
+        </mxCell>
+        <mxCell id="7-nQah4uW7wYO3JxTKnM-17" edge="1" parent="1" source="7-nQah4uW7wYO3JxTKnM-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="7-nQah4uW7wYO3JxTKnM-16" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7-nQah4uW7wYO3JxTKnM-14" parent="1" style="whiteSpace=wrap;html=1;" value="Oota kuni kasutaja sisestab oma parooli, mis omistatakse muutujasse &quot;kasutajaParool&quot;" vertex="1">
+          <mxGeometry height="82.5" width="158.75" x="405.63" y="1320" as="geometry" />
+        </mxCell>
+        <mxCell id="7-nQah4uW7wYO3JxTKnM-19" edge="1" parent="1" source="7-nQah4uW7wYO3JxTKnM-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="7-nQah4uW7wYO3JxTKnM-18" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7-nQah4uW7wYO3JxTKnM-28" connectable="0" parent="7-nQah4uW7wYO3JxTKnM-19" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Ei" vertex="1">
+          <mxGeometry relative="1" x="-0.0313" y="3" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7-nQah4uW7wYO3JxTKnM-23" edge="1" parent="1" source="7-nQah4uW7wYO3JxTKnM-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="7-nQah4uW7wYO3JxTKnM-22" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7-nQah4uW7wYO3JxTKnM-29" connectable="0" parent="7-nQah4uW7wYO3JxTKnM-23" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Jah" vertex="1">
+          <mxGeometry relative="1" x="-0.2058" y="-1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7-nQah4uW7wYO3JxTKnM-16" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="Kas kasutaja poolt sisestatud kasutaja nimi muutujas &quot;kasutajaNimi&quot; on user1?" vertex="1">
+          <mxGeometry height="116.25" width="250.63" x="359.68" y="1491.88" as="geometry" />
+        </mxCell>
+        <mxCell id="7-nQah4uW7wYO3JxTKnM-33" edge="1" parent="1" source="7-nQah4uW7wYO3JxTKnM-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="7-nQah4uW7wYO3JxTKnM-32" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="485" y="2000" />
+              <mxPoint x="818" y="2000" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7-nQah4uW7wYO3JxTKnM-18" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Kyva kasutajale tekst &quot;kasutajanimi või parool ei ole õige, sissepääs keelatud&quot;" vertex="1">
+          <mxGeometry height="91.88" width="204.68" x="382.65" y="1790" as="geometry" />
+        </mxCell>
+        <mxCell id="7-nQah4uW7wYO3JxTKnM-27" edge="1" parent="1" source="7-nQah4uW7wYO3JxTKnM-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="7-nQah4uW7wYO3JxTKnM-26" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7-nQah4uW7wYO3JxTKnM-30" connectable="0" parent="7-nQah4uW7wYO3JxTKnM-27" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Jah" vertex="1">
+          <mxGeometry relative="1" x="0.6049" y="4" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7-nQah4uW7wYO3JxTKnM-31" edge="1" parent="1" source="7-nQah4uW7wYO3JxTKnM-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="7-nQah4uW7wYO3JxTKnM-18">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="912" y="1836" />
+            </Array>
+            <mxPoint x="480" y="1720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7-nQah4uW7wYO3JxTKnM-22" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="Kas kasutaja poolt sisestatud parool muutujas &quot;kasutajaParool&quot; on &quot;qwerty&quot;?" vertex="1">
+          <mxGeometry height="158.13" width="264.06" x="780" y="1470.94" as="geometry" />
+        </mxCell>
+        <mxCell id="7-nQah4uW7wYO3JxTKnM-34" edge="1" parent="1" source="7-nQah4uW7wYO3JxTKnM-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="7-nQah4uW7wYO3JxTKnM-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7-nQah4uW7wYO3JxTKnM-26" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="Kuva kasutajale tekst &quot;tere tulemast, &amp;lt;kasutajanimi&amp;gt;, olete edukalt sisseloginud&quot;" vertex="1">
+          <mxGeometry height="89.05" width="207.96" x="1060" y="1810" as="geometry" />
+        </mxCell>
+        <mxCell id="7-nQah4uW7wYO3JxTKnM-32" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Programmi lõpp" vertex="1">
+          <mxGeometry height="80" width="155.01" x="740" y="2100" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
