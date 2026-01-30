@@ -81,7 +81,7 @@ namespace KamosevaLOGITge25KonspektKordaTehtud // <-- nimeruum, sisaldab {} sulg
 
 
 
-            /*     -= A N D M E T Ü Ü B I D =-       */
+            /*     -= L I H T A N D M E T Ü Ü B I D =-       */
             /*
             string tekst = "mingisugune inimloetav tekstike"; //TEKST
             char täht = 'A';
@@ -117,6 +117,28 @@ namespace KamosevaLOGITge25KonspektKordaTehtud // <-- nimeruum, sisaldab {} sulg
             */
 
 
+            /*     -= K O M P O S I I T A N D M E T Ü Ü B I D =-       */
+
+            /*    MASSIIV    */
+            /*
+            [] -> Massiiv on komposiitandmetüüp, mille sees saab olla mitmeid sama tüüpi lihtandmeid. Masiivi tähistatakse kantsulgudega.
+                    Massiiva saab olla ükskõik millist lihtandmetüüpi massiive, massiivi tekitamisel peab ära ütlema kui pikk või suur vastav massiiv on. Kuigi massiivis saab olla
+                    lihtandmetüübid, saab massiive moodustada ka teistest massiividest ja muudest komposiitandmetüüpidest. Kui on moodustatud massiiv, mis koosneb teistest massiividest
+                    on tegu mitmedimensioonilise massiiviga. Näiteks on 2D massiiv - selline massiiv kus on sees omakorda veel kaks lihtandmetüübist koosnevat massiivi, näiteks flost.
+            -= Esimene tekitusviis =-
+            int[] uusMassiiv = new int[3];          // Andmetüüp int väljendab, et tegu on täisarvutüüpi anamega, mis on massiiv, ja omab endas täisarve
+                                                    // Muutuja nimi on "uusMassiiv" ning võrdusmärgi taga omistatakse sinna massiiv kolme elemendiga, kus mitte ükski element hetkel
+                                                    // veel väärtust ei oma. Kui mitu elementi väljendatakse kantsulgude vahel, peale andmetüüpi ja peale kaitstud sõna "new". New ütleb
+                                                    // et tegu on uue väärtusega selle muutuja sees.
+            -= Teine tekitusviis =- 
+            int[] uusMassiiv2 = [1, 2, 3];          // Teine massiivi tekitusviis kus massiivi pikkuse sätestamise asemel antakse muutujasse kohe kindlate väärtustega elemendid kaasa. 
+                                                    // Massiivi pikkust sätestama ei pea, kuna see tuletatakse elementide arvust.
+
+            /*  - - Massiivi sisemised meetodid - -  */
+            /*
+            int kuiPaljuOn = uusMassiiv.Length;     // Massiivi meetod "Length" mille saame kasutusele võtta/adresseerida punkti abil. Loendab kokku mittu elementi massiivis on ja
+                                                    // tagastab selle väärtuse. Selles näites omistatakse tagastatav väärtus muutujasse "kuiPaljuOn". Väärtus saab olla ainult täisarv, 
+                                                    // sest poolikuid või osalisi elemente ei ole olemas.
 
             /*      -= K A I T S T U D   S Õ N A D =-       */
 
@@ -298,8 +320,7 @@ namespace KamosevaLOGITge25KonspektKordaTehtud // <-- nimeruum, sisaldab {} sulg
             */
 
 
-
-            /*   T S Ü K L I D   DO-WHILE   */
+            /*   TSÜKLID  DO-WHILE   */
             /*
             // Do-while tsükkel erineb kõigist teistest tsüklidest sellega, et tingimusekontroll toimub pärast esimest tegevusringi. Kõikides teistes tsüklites toimub tingimusekontroll enne
             // esimest ringi.
@@ -318,11 +339,41 @@ namespace KamosevaLOGITge25KonspektKordaTehtud // <-- nimeruum, sisaldab {} sulg
             */
 
 
+            /*   TSÜKLID WHILE   */
+            // While tsükkel on kõige tüüpilisemat laadi tsükkel, tal on tingimusekontroll esimese ringi alduses, kuid tsükkel ei oma sisseehitatud tsüklimuutujat, selle peab sätestama programmeerija
+
+            string tsükliMuutuja2 = "";                 // mingisugune muutuja, mis omab tsükli töö tingimuse abil kontrollimiseks vajalikku väärtust ehk tsüklimuutuja
+            while (tsükliMuutuja2 != "0")               // "while" on kaitstud sõna, mis alustab while tsüklit, sellele järgneb sulgude vahel "()" olev tingimusekontroll, kus kontrollitakse
+                                                        // tsüklimuutuja hetkeseisu, ning kui avaldis tagastab "true", tsükkel töötab veel ühe ringi, kui tingimus ei täitu, siis ei täideta
+                                                        // ka järgnevat ringi, ning tsükli töö katkeb. Antud juhul kontrollitakse, et tsüklimuutuja ei oleks võrdne sõnega kus on tähemärk
+                                                        // arvu 0 jaoks
+            {
+                Console.WriteLine("esita tekst:");      // Koodiploki "{}" sees olev tegevus, antud juhul küsitakse kasutajalt teksti esitust
+                tsükliMuutuja2 = Console.ReadLine();    // mis seejärel omistatakse enda sisse.
+            }
 
 
 
+            /*      TSÜKLID FOR     */
 
+            // For tsükkel, võrreldes dowhile või while tsükliga omab endas tsükli töö edasiviimiseks tsükli enda sätestuse sees, peale tingimuskontrolli ka enda tsüklimuutujat, ning selle
+            // iseenda tsüklimuutuja muutmist. Tal on olemas kõik vajalik, et teha oma tööd automaatselt kui while või dowhile tsüklil.
 
+            int[] arvuMassiiv = new int[5];                     // Muutuja, kus on andmed, mida tsükkel läbi töötleb
+            for (int k = 0; k < arvuMassiiv.Length; k++)        // Kaitstud sõna "for" alustab for tsüklit, pärast mida on sulud, mille vahel on kõik tsükli tõõ jaoks vajalik. Esimene parameeter
+                                                                // tekitab tsükli töö jaoks kohaliku muutuja - tsüklimuutuja ei eksisteeri väljaspool tsükli enda konteksti. Selle sätestuses
+                                                                // on kohalik muutuja "int k = 0;"
+                                                                // Teine parameeter on tsükli töö kontrollimiseks vajalik tingimusekontroll. Samamoodi nagu while või dowhile juures, tingimuse
+                                                                // täitumisel ("true") tsükkel teeb ühe ringi, mittetäitumisel tsükli töö katkeb.
+                                                                // Kolmas parameeter on tsüklimuutuja muutmine, selles näites seda kiirtehega ++ seda inkremeneeritakse. On võimalik ka muud for
+                                                                // sulgude vahelised operatsiooni konfiguratsioonid.
+                                                                // Iga for tsükli parameeter on tegelikult oma täielik koodilause. Seega, eraldatakse sulgude vahel lauselõpumärgiga, v.a. viimane.
+                                                                // Sulgudele järgneb koodiplokk {}
+                                                            
+            {
+                Console.WriteLine("Sisesta " + k + ". arv");    // Tegevus koodiploki sees, kus küsitakse kasutades tsüklimuutujat, kasutajalt järgmist/mingindat arvu.
+                arvuMassiiv[k] = int.Parse(Console.ReadLine()); // Kasutades tsüklimuutujat, täidetakse massiiv.
+            }
 
 
 
@@ -552,7 +603,43 @@ namespace KamosevaLOGITge25KonspektKordaTehtud // <-- nimeruum, sisaldab {} sulg
                 " \nlastekeskmine on " + Math.Round(lastekeskmine, 2) + "m. Kahe keskmise vahe on " + Math.Round(vahe, 2) + "m.");
             */
 
-            /* näidisülesanne 9 */
+            /* näidisülesanne 9 + sünoptiku sõnum */
+
+            // Kirjuta programm mis küsib kasutajalt viie järgmise päeva temperatuuri ja ilma kirjeldust kui sünoptik on sisestused lõpetanud, kuva viis rida,
+            // mis kirjeldab viis päeva mõlema omadusega
+            /*
+            float[] temps = new int[5];                    // Temperatuuride massiiv
+            string[] kirjeldused = new string[5];          // Kirjelduste massiiv
+            for (int i = 0; i < temps.Length; i++)         // Võtame sünoptikult temperatuuri andmed ükshaaval
+            {
+                Console.WriteLine("Esita palun jargmine temperatuur:");
+                temps[i]=float.Parse(Console.ReadLine());
+            }
+            Console.WriteLine("Ole hea, kirjelda ka eesolev nadal");
+            for (int i = 0; i < kirjeldused.Length; i++)   // Võtame sünoptikult päeva kirjelduse ükshaaval
+            {
+                Console.WriteLine("kirjelda " + (i + 1) + ". paeva");
+                kirjeldused[i] = Console.ReadLine();
+            }
+            Console.WriteLine("Palun edasta uudistejaamale ilmateade:");
+            for (int i = 0; i < temps.Length; i++)
+            {
+                Console.WriteLine((i + 1) + ". paeval on temperatuur " + temps[i] + " kraadi ja ilm on" + kirjeldused[i] + ".");
+            }
+            */ 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             int suunaKood = 0;
             // "int" näitab et me määrame täisarvu tüüpi muutuja
