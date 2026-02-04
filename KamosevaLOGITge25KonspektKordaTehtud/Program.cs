@@ -33,8 +33,7 @@ namespace KamosevaLOGITge25KonspektKordaTehtud // <-- nimeruum, sisaldab {} sulg
            reas "1" console tööriista
            writeline - funktsioon mida parasjagu kasutatakse.writeline kuvab käsureale teksti, või kaasaantud parameetreid.
            () - sulupaar mis omab funktsiooni tööks vajalikku infot/ parameetreid.
-           { }
-          -tähistab koodiplokki konteineri jaoks.
+           {} - tähistab koodiplokki konteineri jaoks.
            [] - tähistab massiivi.
            "" - tähistavad sõne andmetüüpi andmeid.andmed ise asuvad jutumärkide vahel.
            "string" - andmetüüp, mis kirjutatakse alati muutuja ette.andmetüübis endas asuvad ka andmetüübile vajalikud funktsioonid.
@@ -633,14 +632,6 @@ namespace KamosevaLOGITge25KonspektKordaTehtud // <-- nimeruum, sisaldab {} sulg
 
 
 
-
-
-
-
-
-
-
-
             int suunaKood = 0;
             // "int" näitab et me määrame täisarvu tüüpi muutuja
             // "suunaKood" - uue muutuja nimi
@@ -650,7 +641,7 @@ namespace KamosevaLOGITge25KonspektKordaTehtud // <-- nimeruum, sisaldab {} sulg
             Console.WriteLine("Palun sisesta oma suunakood");
             // Console moodul seostab käsurea kasutajaga tekstipõhise konsooliakna kaudu
             // . näitab et järgmine osa (WriteLine) kuulub enne täppi olevale moodulile (Console)
-            // WriteLine kuvab kasutajale antud teksti
+            // WriteLine on meetod, mis kuvab kasutajale antud teksti
             // () sulgude vahel on andmed/parameeter, mis kuulub antud käsule
             // "Palun sisesta oma suunakood" - kasutajale kuvav tekst
             // ; lõpetab käsurea/lause
@@ -663,21 +654,56 @@ namespace KamosevaLOGITge25KonspektKordaTehtud // <-- nimeruum, sisaldab {} sulg
             // () Parse käsule kuuluvates sulgudes on parameeter, mida tahame parseerida
             // Console moodul seostab käsurea kasutajaga tekstipõhise konsooliakna kaudu
             // . näitab et järgmine osa (ReadLine) kuulub enne täppi olevale moodulile (Console)
-            // ReadLine "loeb" andmeid, mida kasutaja sisestab konsooliaknas
-            // () Readline kuuluvates sulgudes on andmed, millega me töötame. Aga neid sisestame mitte meie, vaid kasutaja
+            // ReadLine on meetod, mis "loeb" andmeid, mida kasutaja sisestab konsooliaknas
+            // () Readline kuuluvates sulgudes asuvad andmed, millega programm töötab. Aga neid sisestame mitte meie, vaid kasutaja
             // ; lõpetab käsurea/lause
             if (suunaKood > 9999 && suunaKood < 100000)
+            // "if" kontrollib kas ees olev tingimus on järgitud, ning kui nii on, ehk tulemusena annab "true", teosatatakse järgnevat koodiplokki, ning "else if" ja "else" plokke ignoreeritakse. Muidu koodi jäetakse vahele
+            // () sulgudes asub kontrollitav tingimus
+            // suunaKood - kontrollitav muutuja
+            // > näitab, et suunaKood muutuja arvväärtus peab olema suurem kui kontrollitav väärtus
+            // 9999 - väärtus, mida me määrasime alampiiriks, ehk kui suunaKood väärtus on 9999 või vähem, "if" annab tulemusena "false"
+            // && määrab, et mõlemad tingimused peavad olema täidetud, et "if" annaks tulemusena "true"
+            // < näitab, et suunaKood muutuja arvväärtus peab olema vähem kui kontrollitav väärtus
+            // 100000 - väärtus, mida me määrasime ülempiiriks, ehk kui suunaKood väärtus on 100000 või suurem, "if" annab tulemusena "false"
             {
                 Console.WriteLine("Ahhaa, nyyd tean kus sa elad!");
             }
+            // {} loogeliste sulgude vahel asub koodiplokk, mida täidetakse, kui "if" tingimus annab tulemusena "true"
+            // Console moodul seostab käsurea kasutajaga tekstipõhise konsooliakna kaudu
+            // . näitab et järgmine osa (WriteLine) kuulub enne täppi olevale moodulile (Console)
+            // WriteLine on meetod, mis kuvab kasutajale antud teksti
+            // () sulgude vahel on andmed/parameeter, mis kuulub antud käsule
+            // "Ahhaa, nyyd tean kus sa elad!" - kasutajale kuvav tekst
+            // ; lõpetab käsurea/lause
             else if (suunaKood <= 9999)
+            // "else if" kontrollib uue ees oleva tingimuse juhul, kui "if" tingimus andis tulemusena "false", ehk polnud järgitud
+            // () sulgudes asub uus kontrollitav tingimus
+            // suunaKood - kontrollitav muutuja
+            // <= näitab, et suunaKood muutuja arvväärtus peab olema võrdne või vähem kui kontrollitav väärtus
+            // 9999 - väärtus, mida me määrasime ülempiiriks, ehk kui suunaKood väärtus on 9999 või vähem, "else if" annab tulemusena "true"
             {
                 Console.WriteLine("yks taht on puudu");
             }
+            // {} loogeliste sulgude vahel asub koodiplokk, mida täidetakse, kui "if" tingimus annab tulemusena "true"
+            // Console moodul seostab käsurea kasutajaga tekstipõhise konsooliakna kaudu
+            // . näitab et järgmine osa (WriteLine) kuulub enne täppi olevale moodulile (Console)
+            // WriteLine on meetod, mis kuvab kasutajale antud teksti
+            // () sulgude vahel on andmed/parameeter, mis kuulub antud käsule
+            // "yks taht on puudu" - kasutajale kuvav tekst
+            // ; lõpetab käsurea/lause
             else
+            // "else" järgnev koodiplokk täidetakse ainult juhul kui mõlemad "if" ja "else if" annavad tulemusena "false"
             {
                 Console.WriteLine("yks taht on yle");
             }
+            // {} loogeliste sulgude vahel asub koodiplokk, mida täidetakse, kui "if" tingimus annab tulemusena "true"
+            // Console moodul seostab käsurea kasutajaga tekstipõhise konsooliakna kaudu
+            // . näitab et järgmine osa (WriteLine) kuulub enne täppi olevale moodulile (Console)
+            // WriteLine on meetod, mis kuvab kasutajale antud teksti
+            // () sulgude vahel on andmed/parameeter, mis kuulub antud käsule
+            // "yks taht on yle" - kasutajale kuvav tekst
+            // ; lõpetab käsurea/lause
 
         }
     }
