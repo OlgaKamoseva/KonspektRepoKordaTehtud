@@ -357,7 +357,7 @@ namespace KamosevaLOGITge25KonspektKordaTehtud // <-- nimeruum, sisaldab {} sulg
 
             // For tsükkel, võrreldes dowhile või while tsükliga omab endas tsükli töö edasiviimiseks tsükli enda sätestuse sees, peale tingimuskontrolli ka enda tsüklimuutujat, ning selle
             // iseenda tsüklimuutuja muutmist. Tal on olemas kõik vajalik, et teha oma tööd automaatselt kui while või dowhile tsüklil.
-
+            /*
             int[] arvuMassiiv = new int[5];                     // Muutuja, kus on andmed, mida tsükkel läbi töötleb
             for (int k = 0; k < arvuMassiiv.Length; k++)        // Kaitstud sõna "for" alustab for tsüklit, pärast mida on sulud, mille vahel on kõik tsükli tõõ jaoks vajalik. Esimene parameeter
                                                                 // tekitab tsükli töö jaoks kohaliku muutuja - tsüklimuutuja ei eksisteeri väljaspool tsükli enda konteksti. Selle sätestuses
@@ -373,7 +373,7 @@ namespace KamosevaLOGITge25KonspektKordaTehtud // <-- nimeruum, sisaldab {} sulg
                 Console.WriteLine("Sisesta " + k + ". arv");    // Tegevus koodiploki sees, kus küsitakse kasutades tsüklimuutujat, kasutajalt järgmist/mingindat arvu.
                 arvuMassiiv[k] = int.Parse(Console.ReadLine()); // Kasutades tsüklimuutujat, täidetakse massiiv.
             }
-
+            */
 
 
 
