@@ -340,7 +340,7 @@ namespace KamosevaLOGITge25KonspektKordaTehtud // <-- nimeruum, sisaldab {} sulg
 
             /*   TSÜKLID WHILE   */
             // While tsükkel on kõige tüüpilisemat laadi tsükkel, tal on tingimusekontroll esimese ringi alduses, kuid tsükkel ei oma sisseehitatud tsüklimuutujat, selle peab sätestama programmeerija
-
+            /*
             string tsükliMuutuja2 = "";                 // mingisugune muutuja, mis omab tsükli töö tingimuse abil kontrollimiseks vajalikku väärtust ehk tsüklimuutuja
             while (tsükliMuutuja2 != "0")               // "while" on kaitstud sõna, mis alustab while tsüklit, sellele järgneb sulgude vahel "()" olev tingimusekontroll, kus kontrollitakse
                                                         // tsüklimuutuja hetkeseisu, ning kui avaldis tagastab "true", tsükkel töötab veel ühe ringi, kui tingimus ei täitu, siis ei täideta
@@ -350,7 +350,7 @@ namespace KamosevaLOGITge25KonspektKordaTehtud // <-- nimeruum, sisaldab {} sulg
                 Console.WriteLine("esita tekst:");      // Koodiploki "{}" sees olev tegevus, antud juhul küsitakse kasutajalt teksti esitust
                 tsükliMuutuja2 = Console.ReadLine();    // mis seejärel omistatakse enda sisse.
             }
-
+            */
 
 
             /*      TSÜKLID FOR     */
