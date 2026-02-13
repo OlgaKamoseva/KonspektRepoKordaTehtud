@@ -138,13 +138,103 @@ namespace KamosevaLOGITge25KonspektKordaTehtud // <-- nimeruum, sisaldab {} sulg
             int kuiPaljuOn = uusMassiiv.Length;     // Massiivi meetod "Length" mille saame kasutusele võtta/adresseerida punkti abil. Loendab kokku mittu elementi massiivis on ja
                                                     // tagastab selle väärtuse. Selles näites omistatakse tagastatav väärtus muutujasse "kuiPaljuOn". Väärtus saab olla ainult täisarv, 
                                                     // sest poolikuid või osalisi elemente ei ole olemas. */
+            /* 2 - LOEND */
+            /*
+            // List<T>   -> Loend on komposiitandmetüüp, kus sarnaselt massiiviga, saab olla mitmeid samat tüüpi andmeid. List kirjutatakse kui oma andmetüüp,
+            //              kus sulgude vahel on loendis olevate individuaalsete elementide andmetüüp. Samamoodi nagu massiive, saab loendeid olla ükskõik
+            //              millist lihtandmetüüpi ja komposiitandmetüüpi (isegi kui see on teine list). Erinevalt massiivist aga ei pea ütlema kui pikk loend
+            //              ise on, massiivis tuleb see ette öelda. Loendi eripära on see, et teda saab dünaamiliselt oma pikkusel muuta, see tähendab et
+            //              elemente saab eemaldada koos selle elemendi asukohaga. Massiivi puhul nii teha ei saa sest massiiv on konstantse ehk
+            //              muutumatu pikkusega. Listi üksikelemendi andmetüüp asub noolsulgude vahel "<>" kaitstud sõna "List" järel.
+            // Esimene tekitusviis:
+            List<int> arvuLoend = new List<int>(); //Andmetüübi kirjeldus "List<>" näitab et tegu on loendiga, Listi noolsulgude vahel, on loendis olevate
+                                                   //andmete andmetüüp, antud juhul on siin täisarvud, ehk "int". Muutuja enda nimeks, kus andmeid
+                                                   //hoitakse on "arvuLoend". Sellesse muutujasse omistatakse kaitstud sõna "new" abil uus, PIKKUSETA ja tühi
+                                                   //loend täisarvudega. 
+                                                   // Teine tekitusviis:
+            List<int> arvuLoend2 = new List<int>() { 1, 2, 3 };     //Teine loendi tekitusviis, andmetüübi kirjeldus "List<>" näitab et tegu on loendiga,
+                                                                    //Listi noolsulgude vahel, on loendis olevate andmete andmetüüp, antud juhul on siin
+                                                                    //täisarvud, ehk "int". Muutuja enda nimeks, kus andmeid hoitakse on "arvuLoend2". Sellesse
+                                                                    //muutujasse omistatakse kaitstud sõna "new" abil uus ja tühi loend täisarvudega, kuid
+                                                                    //pärast andmetüübi taga olevaid sulge, anname loogeliste sulgude vahel talle kaasa kohe
+                                                                    //ka elemendid. Antud juhul on tegu täisarvudega 1, 2 ja 3. Enam ei ole tegu PIKKUSETA EGA
+                                                                    //TÜHJA loendiga, vaid sarnaselt massiivile, tekib selle loendi pikkus, põhinedes sellele
+                                                                    //mitu elementi on kaasa antud.
+                                                                    // Kolmas tekitusviis:
+            List<int> arvuLoend3 = new List<int>(3);        //Kolmas loendi tekitusviis, andmetüübi kirjeldus "List<>" näitab et tegu on loendiga, Listi
+                                                            //noolsulgude vahel, on loendis olevate andmete andmetüüp, antud juhul on siin täisarvud, ehk
+                                                            //"int". Muutuja enda nimeks, kus andmeid hoitakse on "arvuLoend2". Sellesse muutujasse
+                                                            //omistatakse kaitstud sõna "new" abil uus ja tühi loend täisarvudega kuid loend omab kolme
+                                                            //tühja elementi. Elementide arv sätestakase peale noolsulge olevate tavaliste sulgude vahele.
+                                                            //Arve, ega väärtusi, nende elementide sees veel ei ole.
+            */
+
+            /* 3 - SÕNASTIK */
+            /*
+            // Dictionary <T, T>  -> Dictionary on komposiitandmetüüp mis omab võtiväärtuspaare. Erinevalt eelnevatest komposiitandmetõõpidest, saab Dictionary omada kahte erinevat andmetõõpi millest esimene 
+                                     väljendab võtme andmetõõpu ning teine võtme taga olevat väärtuse andmetüüpi. Need andmetüübid saavad üksteisest erineda või isegi omada klasse andmetüüpidena ning ka muid
+                                     komposiitandmetüüpe.
+            Esimene tekitusviis:
+            Dictionary<int,string> sonastik = new Dictionary<int,string>();     // Andmetüübi kirjeldus "Dictionary<>" näitab et tegu on sõnastikuga, ehk loendiga võtiväärtuspaaridest. Dictionary noolsulgude 
+                                                                                // vahel asetatakse kaks andmetüübi, esimene neist on võtme andmetüüp (antud juhul "int") teine neist on võtme taga oleva väärtuse
+                                                                                // andmetüüp (sel juhul "string"). Muutuja nimeks on "sõnastik" kuhu omistatakse käsusõnaga "new" uus tühi sõnastik vastavate
+                                                                                // andmetüüpidega.
+
+            // Teine tekitusviis:
+            Dictionary<int,string> sonastik = new Dictionary<int,string>() {{1,"astelpaju"},{2,"muulukas"},{3,"maasikas"}};     
+                                                                                // Andmetüübi kirjeldus "Dictionary<>" näitab et tegu on sõnastikuga, ehk loendiga võtiväärtuspaaridest. Dictionary noolsulgude 
+                                                                                // vahel asetatakse kaks andmetüübi, esimene neist on võtme andmetüüp (antud juhul "int") teine neist on võtme taga oleva väärtuse
+                                                                                // andmetüüp (sel juhul "string"). Muutuja nimeks on "sõnastik" kuhu omistatakse käsusõnaga "new" uus sõnastik koos elementidega,
+                                                                                // mis asuvad loogelistes sulgudes ja iga element ise on veel omakorda loogelistes sulgudes infoga mis vastab dictionary andmetüüpide 
+                                                                                // sätestusele.
+
+            Sõnastikku tööriistad:
+
+            sõnastik.Add(4, "Tikker");          // .Add() võimaldab olemasoleva sõnaraamatu lõppu lisada elementi. Sulgude vahel on andmed, mille andmetüübid vastavad täiendava sõnastiku andmetüüpide sätestusega.
+            sõnastik.Remove(2);                 // .Remove() eemaldab kindla võtme järgi sõnastikus oleva elemendi. Sulgude vahel on selle võtme andmetüüpile vastav väärtus, mitte võtme taga oleva väärtuse väärtus.
+            sõnastik.Clear();                   // .Clear() teeb sõnastiku täielikult tühjaks.
+            sõnastik.ContainsKey(4);            // .ContainsKey() tagastab kas "true" või "false" vastavalt sellele kas ta leiab antud sõnastikust parameetrina kaasa antud võtme.
+            sõnastik.ContainsValue("Tikker");   // .ContainsValue() tagastab kas "true" või "false" vastavalt sellele kas ta leiab antud sõnastikust parameetrina kaasa antud väärtuse.
+            */
+
+            /*   4 - MITMIK/HULK   */
+            // Andmetüübi kirjeldus "Tuple<>" näitab et siin on tegu erinevate andmete hulgaga ehk mitmikuga. Tuple noolsulgude vahele asetatakse kõik soovitud vajadusel erinevad andmetüübid mis väljendavad tupli 
+            // sees väljenduvate andmete asukohtade andmetüüpe. Kui esimene andmetüüp on string, siis Tuple esimene objekt on string tüüpi andmed, kui teine andmetüüp on List<int[]> hoiatakse teises objektis loendeid
+            // mille sees on massiivid täisarvudega. Just nagu kõik teised komposiitandmetüübid, võtab ka Tuple vastu kõiki andmetüüpe, kaasaarvatud iseennast. Erinevalt teistest komposiitandmetüüpidest, ei saa ühte
+            // Tuple elemendi kohapeal muuta, vaid kogu Tuple tuleb protsessi käigus rekombineerida muudetud andmetest ja olemasolevatest andmetest uuesti.
+            Tuple<string, string> piparmundiTupla = new Tuple<string, string>("vasak tupla", "parem tupla");
+            // Esimene tekitusviis:
+            Tuple<bool, int, string> someTupla = new Tuple<bool, int, string>(true, 1, "abc");
+            // Andmetüübi kirjeldus "Tuple<>" ütleb et selles muutujas on mitmik. Selles mitmikus on esimeseks bool, teiseks int, ning kolmandaks string tüüpi objektid. Tuple vajab ka kohe esmast omistust, seega kaitstud
+            // sõna new ja andmetüüpi kirjeldus "Tuple<bool, int, string>" vajab peale sead sulgude vahele esmaseid andmeid. Antud juhul on siin (true, 1, "abc");
+
+            // Tuple töötlemine:
+            // Ütleme et on olemas ülaltoodud piparmündiTupla. See on Tuple. Justnahu päris tupla, tahame sealt üha ära süüa. Ehk asendada ühe kahest objektist uue sõnaga mis loeks "NJÄM NJÄM NJÄM"
+            // Tuplet ei saa muuta, aga seda saab rekombineerida, seega me saame teha nii:
+            string uuspool = "NJÄM NJÄM NJÄM";
+            piparmundiTupla = new Tuple<string, string>(piparmundiTupla.Item1, uuspool);
+
+            // Tuple adresseerimine:
+            // Justnagu eelnevalt näidatud, me saame adresseerida tuple erinevaid objekte siiski eraldi. Selle jaoks on iga tekitatud Tuple sees genereeritud muutujad ".Item#" millega me saame adresseerida
+            // soovitud objekti.
+            // NB! erinevalt loendist ja massiivist, algab lugemine arvust 1, ehk esimene Item ei ole Item0, vaid Item1
+            string pool1 = piparmundiTupla.Item1;           // siin asetame muutujasse "pool1" valitud tuplest esimese objekti, ning
+            string pool2 = piparmundiTupla.Item2;           // seal asetame muutujasse "pool2" valitud tuplest teise objekti
+
 
 
             /*      -= J U H U A R V =-       */
-            Random juhuarv = new Random();
-            int miski = juhuarv.Next(-5, 5);
-            float miski2 = juhuarv.NextSingle(0.5, 1.);
-
+            /* Random klass annab võimaluse programmerijale genereerida pseudorandom väärtusi.
+            
+            Random juhuarv = new Random();        // Klassinimi "Random" on kasutatav kui andmetüüp, mis ütleb et järgnevas muutujas nimega "juhuarv" on uus random tüüpi objekt, mis omistatakse sinna 
+                                                  // "new Random()" käsuga. Konstruktor ulatab muutuja sisse Random tüüpi klassi. Antud muutuja nüüd ise ei ole see juhuarv, ta toimib kui juhuarvude
+                                                  // generaatorina millest punkti abil saab adresseerida Random genereerimise tööriistu
+            int a = juhuarv.Next();               // .Next() on meetod Random klassis mis on genereeriv meetod juhuarvu genereerimiseks. Seda saab kasutada kui väärtusena, ning ta tagastab suvalise arvu. 
+                                                  // Ilma parameetrita tagastab andmetüübi maksimaalpiirides mingisuguse juhuarvu
+            int miski = juhuarv.Next(5);          // .Next() ühe parameetriga anname talle ülemise piiri, mille alumine piir on vaikeväärtusena 0
+            int miski2 = juhuarv.Next(-5, 5);     // .Next() kahe parameetriga kirjeldab ära täieliku vahemiku, olgu see siis negatiivne või positiivne
+            double aDbl = juhuarv.NextDouble();   // .NextDouble() annab double-tüüpi väärtusi, parameetri kasutus on identne
+            float aLng = juhuarv.NextSingle();    // .NextSingle() annab float-tüüpi väärtuse mis on vahemikus 0.0 ja 1.0
 
 
 
