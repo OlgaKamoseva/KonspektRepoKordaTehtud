@@ -91,8 +91,8 @@ namespace KamosevaLOGITge25KonspektKordaTehtud // <-- nimeruum, sisaldab {} sulg
             var x = 123;
             var y = "ABC";
             bool jahvõiei = false; //kas true või false.
-            */
-            /*
+            
+
             int minuArv = 9001;
             Console.WriteLine(minuArv);
             double minuDouble = minuArv;
@@ -137,7 +137,18 @@ namespace KamosevaLOGITge25KonspektKordaTehtud // <-- nimeruum, sisaldab {} sulg
             /*
             int kuiPaljuOn = uusMassiiv.Length;     // Massiivi meetod "Length" mille saame kasutusele võtta/adresseerida punkti abil. Loendab kokku mittu elementi massiivis on ja
                                                     // tagastab selle väärtuse. Selles näites omistatakse tagastatav väärtus muutujasse "kuiPaljuOn". Väärtus saab olla ainult täisarv, 
-                                                    // sest poolikuid või osalisi elemente ei ole olemas.
+                                                    // sest poolikuid või osalisi elemente ei ole olemas. */
+
+
+            /*      -= J U H U A R V =-       */
+            Random juhuarv = new Random();
+            int miski = juhuarv.Next(-5, 5);
+            float miski2 = juhuarv.NextSingle(0.5, 1.);
+
+
+
+
+
 
             /*      -= K A I T S T U D   S Õ N A D =-       */
 
@@ -625,12 +636,12 @@ namespace KamosevaLOGITge25KonspektKordaTehtud // <-- nimeruum, sisaldab {} sulg
             {
                 Console.WriteLine((i + 1) + ". paeval on temperatuur " + temps[i] + " kraadi ja ilm on" + kirjeldused[i] + ".");
             }
-            */ 
+            */
 
 
 
 
-
+            /*
 
             int suunaKood = 0;
             // "int" näitab et me määrame täisarvu tüüpi muutuja
@@ -704,6 +715,7 @@ namespace KamosevaLOGITge25KonspektKordaTehtud // <-- nimeruum, sisaldab {} sulg
             // () sulgude vahel on andmed/parameeter, mis kuulub antud käsule
             // "yks taht on yle" - kasutajale kuvav tekst
             // ; lõpetab käsurea/lause
+            */
 
         }
     }
