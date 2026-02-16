@@ -19,17 +19,23 @@ namespace Ylesanne4
             // kui kasutaja portfell pole jõudnud alla nulli, siis kasutaja saab valida kas investeerida uuesti või mitte
             // kui aga portfell on nullis, öeldakse kasutajale et on pankrotis
             // kuvatakse kasutajale tema portfelli lõppväärtus.
-
+            
             List<string> firmaNimed = new List<string>() { "Tesla", "TransferWise", "Macro$lop" };
             List<int> firmaValikud = new List<int>() { 1, 2, 3 };
+
             int firmaNumber = 0;
             bool investeerime = true;
+            double tananeKordaja = 0;
+            double uusRaha = 0;
+            double sissetulek = 0;
+
             Random kordaja = new Random();
 
+            Console.WriteLine("Palju sa soovid investeerida?");
+            double investMoney = double.Parse(Console.ReadLine());
             while (investeerime == true)
             {
-                Console.WriteLine("Palju sa soovid investeerida?");
-                double investMoney = double.Parse(Console.ReadLine());
+
                 do
                 {
                     Console.WriteLine("Mis firmasse sa soovid investeerida?");
@@ -41,43 +47,74 @@ namespace Ylesanne4
                     firmaNumber = int.Parse(Console.ReadLine());
                 }
                 while (!firmaValikud.Contains(firmaNumber));
+                Console.WriteLine("Mitu paeva soovid investeering turul lasta? Kirjuta taisarvuga");
+                int aeg = int.Parse(Console.ReadLine());
+                int[] paevTurul = new int[aeg];
+                for (int k = 0; k < paevTurul.Length; k++)
+                {
+                    if (investMoney > 0)
+                    {
+                        if (firmaNumber == 1)
+                        {
+                            tananeKordaja = -1.15;
+                            uusRaha = Math.Round(investMoney * tananeKordaja, 2);
+                            sissetulek = uusRaha - investMoney;
 
-                if (firmaNumber == 1)
-                {
-                    double sissetulekTesla = investMoney * -1.15;
+                        }
+                        else if (firmaNumber == 2)
+                        {
+                            tananeKordaja = kordaja.Next(1, 100);
+                            tananeKordaja = tananeKordaja / 1000 + 1;
+                            uusRaha = Math.Round(investMoney * tananeKordaja, 2);
+                            sissetulek = uusRaha - investMoney;
+                        }
+                        else
+                        {
+                            tananeKordaja = -(kordaja.Next(1, 100));
+                            tananeKordaja = tananeKordaja / 1000 + 1;
+                            uusRaha = Math.Round(investMoney * tananeKordaja, 2);
+                            sissetulek = uusRaha - investMoney;
+                        }
+                        Console.WriteLine($"Paev {k + 1}: Tana investeeritud {investMoney} eur");
+                        Console.WriteLine($"Tanane kordaja on {tananeKordaja}");
+                        Console.WriteLine($"Sul on hetkel {uusRaha} eur");
+                        Console.WriteLine($"Sul on juurde {sissetulek} eur");
+                        investMoney = uusRaha;
+                        Console.ReadLine();
+                    }
+                    else
+                    {
+                        k = aeg + 1;
+                    }
+
+
                 }
-                else if (firmaNumber == 2)
+                if (investMoney > 0)
                 {
-                    double transKordaja = kordaja.Next(1, 100);
-                    double sissetulekTrans = transKordaja / 1000 + 1;
+                    string kasutajaVastus = "";
+                    do
+                    {
+                        Console.WriteLine("Kas sa tahad veel investeerida? jah/ei");
+                        kasutajaVastus = Console.ReadLine();
+                    }
+                    while (kasutajaVastus != "jah" && kasutajaVastus != "ei");
+
+                    if (kasutajaVastus == "jah")
+                    {
+                        investeerime = true;
+                    }
+                    else
+                    {
+                        investeerime = false;
+                        Console.WriteLine("Baibai, edu sulle!");
+                    }
                 }
                 else
                 {
-                    double macroKordaja = kordaja.Next(1, 100);
-                    double sissetulekMacro = -(macroKordaja / 1000 + 1);
-                }
-            }
-                string kasutajaVastus = "";
-                do
-                {
-                    Console.WriteLine("Kas sa tahad veel investeerida? jah/ei");
-                    kasutajaVastus = Console.ReadLine();
-                }
-                while (kasutajaVastus != "jah" && kasutajaVastus != "ei");
-
-                if (kasutajaVastus == "jah")
-                {
-                    investeerime = true;
-                }
-                else
-                {
+                    Console.WriteLine("Pizdets, oled PankRott");
                     investeerime = false;
                 }
-            
-
-
-
-
+            }
         }
     }
 }
