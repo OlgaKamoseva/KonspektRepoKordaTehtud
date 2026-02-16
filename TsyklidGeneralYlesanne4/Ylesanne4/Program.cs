@@ -41,12 +41,12 @@ namespace Ylesanne4
                     Console.WriteLine("Mis firmasse sa soovid investeerida?");
                     for (int i = 0; i < firmaNimed.Count; i++)
                     {
-
                         Console.WriteLine((i + 1) + ". " + firmaNimed.ElementAt(i));
                     }
                     firmaNumber = int.Parse(Console.ReadLine());
                 }
                 while (!firmaValikud.Contains(firmaNumber));
+                Console.WriteLine($"{firmaNimed.ElementAt(firmaNumber-1)} it is!");
                 Console.WriteLine("Mitu paeva soovid investeering turul lasta? Kirjuta taisarvuga");
                 int aeg = int.Parse(Console.ReadLine());
                 int[] paevTurul = new int[aeg];
@@ -94,6 +94,7 @@ namespace Ylesanne4
                     string kasutajaVastus = "";
                     do
                     {
+                        Console.WriteLine($"Sul on lopuks {investMoney} eur.");
                         Console.WriteLine("Kas sa tahad veel investeerida? jah/ei");
                         kasutajaVastus = Console.ReadLine();
                     }
