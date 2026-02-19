@@ -476,8 +476,55 @@ namespace KamosevaLOGITge25KonspektKordaTehtud // <-- nimeruum, sisaldab {} sulg
             }
             */
 
+            /*     -=  S Õ N E T Ö Ö R I I S T A D  =-      */
+            string minuLause = "TÄna hommikul jÕin ÄRa terve ploki moNSterit, aga ÜLes ei ÄRganud, tahan veel magada";
+            Console.WriteLine(minuLause.Length);                   // Sõne tööriist .Length tagastab selle pikkuse
+            Console.WriteLine(minuLause.ToUpper());                // Sõne meetod .ToUpper() muudab sõnes olevad tähed suurteks tähtedeks
+            Console.WriteLine(minuLause.ToLower());                // Sõne meetod .ToLower() muudab sõnes olevad tähed väikesteks tähtedeks
+            string tuvastus = "Kas lauses on sõna 'monsterit'?: " + minuLause.ToLower().Contains("monsterit");
+                                                                   // Contains tagastab true või false, olenevalt sellest kas objekt sisaldab otsitavat
+            Console.WriteLine(tuvastus);
+            Console.WriteLine(minuLause.Trim());                   // Trim eemaldab algusest ja lõpust tühjad tähed nagu space või reavahetus
+            string[] lauseOsad = minuLause.Split(' ');             // Split() tükeldab sõne osadeks, selle tähtemärgi pealt mis parameetris seatud on
+            foreach (var osa in lauseOsad)
+            {
+                Console.WriteLine(osa);
+            }
+            bool isBig = false;
+            for (int i = 0; i < lauseOsad.Length; i++)
+            {
+                if (isBig == true)
+                {
+                    lauseOsad[i] = lauseOsad[i].ToUpper();
+                }
+                else
+                {
+                    lauseOsad[i] = lauseOsad[1].ToLower();
+                }
+                isBig = !isBig;
+            }
+            string toodeldudLause = string.Join(' ', lauseOsad);    //.Join() liidab stringid kokku üheks lauseks, võttes parameetriks tähe char ja liidetavad elemendid loendina
+            Console.WriteLine(toodeldudLause);
+
+            // + on kahe stringi vahel kontakteerimisoperatsioon, mitte matemaatiline tehe, ning liidab eelmise stringi loppu jargmise stringi tema algusest et neid kahte yhendada
+
+            List<string> menyy = new List<string> { "kiluvoileib", "vastlakukkel", "hernesupp" };
+            string valjundlause = "Need on meie menyys: ";
+            foreach (var sook in menyy)
+            {
+                valjundlause += " "+sook+",";
+            }
+            Console.WriteLine(valjundlause);
+
+            string eesnimi = "Julius";
+            string perekonnanimi = "Caesar";
+            string amet = "noahoidik";
+            string kuulusKeiser = string.Concat(eesnimi, perekonnanimi, amet);
+            Console.WriteLine(kuulusKeiser);
 
 
+            string kuulusKeiser2 = $"{eesnimi} {perekonnanimi} oli maaila kuulsaim {amet}";
+            Console.WriteLine(kuulusKeiser2);
             //--------------------------------------------------------------------------------//
 
             /*           ---===         N Ä I T E Ü L E S A N N E D        ===---            */
