@@ -1,10 +1,16 @@
-﻿using System;  // <-- enne nimeruumi, viidatakse selles failis/klassis kasutatud pakettidele/moodulitele ja süsteemi muudele osadele
+﻿using System;
+using System.Security.Cryptography.X509Certificates;  // <-- enne nimeruumi, viidatakse selles failis/klassis kasutatud pakettidele/moodulitele ja süsteemi muudele osadele
 // süsteemi muuks osaks voib olla kas operatsioonisüsteemi võimalused või ka teised projektid. Teised projektid viidatakse tavaliselt solution (.sln) failist.
 
 namespace KamosevaLOGITge25KonspektKordaTehtud // <-- nimeruum, sisaldab {} sulgude vahel konteinerit kus asub kogu programmi kood nime all "UusVanaToo"
 {
     internal class Program // <-- programmi klass, mis on ka omakorda konteiner tüüp, kus sees on kogu programmi kood
     {
+        private static double Liitmine(float arv1, float arv2)          // 
+        {                                                               // Meetod tehtud ühe ülesanne jaoks, ei saanud teha Maini sees
+            return (arv1 + arv2);                                       // 
+        }                                                               // 
+
         static void Main(string[] args) //<-- "main" on programmi sees olev meetod mis vaikeväärtusena alati käivitakse, kus ei ole teist meetodit käivituseks määratud
         {
 
@@ -91,6 +97,7 @@ namespace KamosevaLOGITge25KonspektKordaTehtud // <-- nimeruum, sisaldab {} sulg
             var x = 123;
             var y = "ABC";
             bool jahvõiei = false; //kas true või false.
+            void - on andmetüüp, mida muutuja tekitamisel kasutada ei saa, kasutatakse ainult meetodite signatuurides väljendamiseks et meetod ei tagasta midagi.
             
 
             int minuArv = 9001;
@@ -482,7 +489,7 @@ namespace KamosevaLOGITge25KonspektKordaTehtud // <-- nimeruum, sisaldab {} sulg
             Console.WriteLine(minuLause.ToUpper());                // Sõne meetod .ToUpper() muudab sõnes olevad tähed suurteks tähtedeks
             Console.WriteLine(minuLause.ToLower());                // Sõne meetod .ToLower() muudab sõnes olevad tähed väikesteks tähtedeks
             string tuvastus = "Kas lauses on sõna 'monsterit'?: " + minuLause.ToLower().Contains("monsterit");
-                                                                   // Contains tagastab true või false, olenevalt sellest kas objekt sisaldab otsitavat
+            // Contains tagastab true või false, olenevalt sellest kas objekt sisaldab otsitavat
             Console.WriteLine(tuvastus);
             Console.WriteLine(minuLause.Trim());                   // Trim eemaldab algusest ja lõpust tühjad tähed nagu space või reavahetus
             string[] lauseOsad = minuLause.Split(' ');             // Split() tükeldab sõne osadeks, selle tähtemärgi pealt mis parameetris seatud on
@@ -512,7 +519,7 @@ namespace KamosevaLOGITge25KonspektKordaTehtud // <-- nimeruum, sisaldab {} sulg
             string valjundlause = "Need on meie menyys: ";
             foreach (var sook in menyy)
             {
-                valjundlause += " "+sook+",";
+                valjundlause += " " + sook + ",";
             }
             Console.WriteLine(valjundlause);
 
@@ -525,6 +532,112 @@ namespace KamosevaLOGITge25KonspektKordaTehtud // <-- nimeruum, sisaldab {} sulg
 
             string kuulusKeiser2 = $"{eesnimi} {perekonnanimi} oli maaila kuulsaim {amet}";
             Console.WriteLine(kuulusKeiser2);
+
+
+
+            /*      ---=== M E E T O D I D ===---       */
+            // Meetodid on väljakutsutavad koodijupid või alamprogrammid. Meetodid teostavad tavaliselt mingeid spetsiifilisi funktsioone või tegevusi.
+            // Meetodid lasevad programmeerijal taaskasutada oma eelnevalt kirjutatud koodi - write once use many.
+            // Meetodeid on kahte liiki - Ühed, mis tagastavad mingisuguse töö või tegevuse tagajärjel või muu tulemuse saavutamisel andmeid, ja teised mis ei tagasta midagi, kuid
+            // omavad siiski mingit tegevust.
+
+            // Meetodi anatoomia:
+            // Meetodi olemus sisaldab endas kolme vajalikku komponenti. Meetodi enda omadused ja nimi, parameetrid, ning meetodi kood ise.
+            // Meetodi omadused ja nimi ning parameetrid moodustavad meetodi signatuuri, ning sellele järgneb loogelistes sulgudes {} koodiplokk mida vastav meetod väljakutsel täidab.
+
+            // Meetodi signatuur on kõige esimene rida, mis meetodi tekitamiseks kirjutatakse, ning mis kirjeldab meetodit ennast ja selle omadusi
+            // Signatuur aga koosneb ise ka mitmest või kõigist järgnevatest. Nendeks on juurdepääsu modifikator, tagastustüüp, meetodi enda nimi, olenevalt liigist ka parameetrid
+            // sulgude vahel (), ning peale signatuuri koodiplokk.
+
+            //   A   - Juurdepääsu modifikaator ütleb ära kust ja kuidas seda meetodit välja kutsuda või adresseerida saab. Tähtsamad neist on 4-5 tükki:
+            // 0. --------          - modifikaatori puudumisel kompilaator annab meetodile sobiva variandi automaatselt.
+            // 1. "public"          - meetod on avalik ja kättesaadav ka teistes klassides, peale seda klassi/projekti kus meetod ise asub.
+            // 2. "private"         - meetod on kättesaadav ainult selles klassis kus meetod ise asub.
+            // 3. "protected"       - meetod on kättesaadav klassis, kus ta asub, ning kõikides klassides mis päriluse kaudu omab selle klassi andmeid.
+            // 4. "internal"        - meetod on juurdepääsetav ainult projektis kus ta asub. Samas projektis saavad teised klassid seda kasutada, aga mitte prijektist väljaspool
+            //                    asuvad klassid.
+            // 5. "static"          - meetodit on ainult üks.
+
+            //   B   - Tagastustüüp on meetodi omadus, mis ütled ära millise tüüpiga andmeid meetodi väljakutsumise asukohta tagastatakse, kui üldse
+            // Andmetüüp mida tagastatakse võib olla ükskõik milline liht- või kombinatsioonandmetüüp. Aga kui meetod ei tagasta üldse andmeid, on selle meetodi enda andmetüüp "void".
+            // Kui meetodil on tagastustüüp mis on midagi muud kui void, on meetodi sees iga toimiva koodisuuna lõpus kaitstud sõna "return", return ütleb, et just see asi on vaja tagastada.
+            // Peale returni on alati tagastatavad andmed või muutuja mis sisaldab tagastatavaid andmeid. Olenevalt meetodist saab tagastuseks olla ka tegevus. Need andmed antakse tagasi sinna
+            // kust meetod kutsuti, ning peale sõna return muud koodi ei täideta. Return katkestab meetodi töö.
+
+            //   C   - Meetodi enda mini on midagi mille järgiarendaja meetodit kasutab. Nimi omab samat funktsiooni nagu näiteks muutuja nimi mille sees on muutuja andmed. Meetodi nime
+            // kirjutamisel või väljamõtlemisel võiks meetodi nime kirjutada tegevuse järgi mida meetod teeb, mitte kus ta käib ega mõni muu kõrvaline või arusaamatu asi. Näide: kui arendaja
+            // kirjutab meetodi nimega "A()", siis see meetod ei ütle meeskonnakaaslastele/talle endale tulevikus mitte midagi, aga meetodi nimi "ArvutaArvudKokku()" ütleb selgelt ära,
+            // mille jaoks meetod on. Ta ei raiska oma aega meetodi sisse vaatamiseks, et lugeda koodi ning ise nuputada mida meetod teeb.
+
+            //   D   - Parameetrid on väljad mis ütlevad mida meetodil meetodi tööks vaja on, ning mis on vaja sulgude vahele lisada meetodi väljakutseasukohas. Parameetri muutuja nimi võib olla
+            // väljendatud teistmoodi kui selle meetodiga kasutatavad andmed ise. Parameetreid on kahte sorti, kohustuslikud ja optional, ehk valikuline. Valikulise parameetri väljendusel pannakse
+            // andmetüüpi taha küsimärk. On olemas ka vaikeväärtusega parameetrid, kus muutujale, väärtuse puudumisel antakse signatuuris mingisugune väärtus ette ära.
+
+            // 1. tüüpi meetod - ei tagasta andmeid:
+            //A      A      B       C    D
+            //public static void UusMeetod()              // Meetodi signatuur: omab juurdepääsumodifikaatorit "public", asub selles klassis, ning tagastustüüp on void. Pärast omadusi on meetodi
+            //                                            // nimi "UusMeetod" peale mida on sulud () mille vahel parameetreid määratud ei ole.
+            //{                                           // Peale signatuuri on koodiplokk
+            //    Console.WriteLine("Tere");              // Kus kuvatakse kasutajale tekst "Tere"
+            //}
+            //// 2. tüüpi meetod - tagastab mingisuguse väärtuse või mingeid andmeid:
+            //int[] arvutatavadArvud = new int[] { 67, 69, 420, 9001 };     // Töödeldavad andmed, mis asuvad täisarvumassiivis *VÄLJASPOOL* meetodit.
+            //public static int ArvutaKokku(int[] arvud)                  // Meetodi signatuur: omab juurdepääsumodifikaatorit "public", asub selles klassis, tagastustüüp "int" ütleb et meetod
+            //                                                            // tagastab andmeid täisarvuna. Meetodi nimi on "ArvutaKokku", ning meetodile on antud üks kohustuslik parameeter arvumassiiv
+            //                                                            // mille muutuja nimi meetodi sees on "arvud"
+            //{ 
+            //    // Meetodi sisu arvutab järjendis olevad arvud foreachi ja += omistusoperatsiooniga kokku muutujasse "summa"
+            //   int summa = 0;
+            //    foreach (var arv in arvud)
+            //    { 
+            //        summa += arv;
+            //    }
+            //    return summa;       // ning meetodi lõpus, kasutades kaitstud sõna "return" tagastab muutujas "summa" oleva väärtuse.
+            //}
+
+            // Meetodi väljakutse:
+            // Hetkel käivitatud koodis, kutsutakse meetod välja ainult tema nimepidi + vajalikud parameetrid (kui neid on)
+
+            // /. mingi muu kood ./
+            //
+            // ArvutaKokku(atvutatavadArvud)
+            //
+            // /. mingi muu kood ./
+            //
+            // Erinevalt kõigest muust, ei ole meetodi näidis konspektis funktsioneeriv.
+
+            /* Valikuline ja kohustuslik parameeter */
+            //public void MillineTekst(int vanus, int? pikkus)
+            //{
+            //     if (vanus < 18)
+            //     {
+            //        Console.WriteLine("Kõtt, alakaid ei taha");
+            //     }
+            //     else if (vanus >= 18)
+            //     { 
+            //        if (pikkus != null)
+            //        {
+            //            if (pikkus <= 170)
+            //            {
+            //               Console.WriteLine(" Saad juua kuni 2 liitrit monsterit");
+            //            }
+            //            else if (pikkus <= 200)
+            //            {
+            //                Console.WriteLine(" Saad juua kuni 4 liitrit monsterit");
+            //            }
+            //        }
+            //        else
+            //        {
+            //             Console.Writeline("Saad juua liiter monsterit");
+            //        }
+            //     }
+            //}
+
+            /* parameetrite vaikeväärtus*/
+            //public string KeskmineTase(float veetase = 1.5f)        // Meetodi signatuuris on asetatud sulgude vahele üks parameeter "veetase" mille taga on võrdusmärk väärtusega. Meetodi signatuuris ütleb võrdusmärk, et
+            //                                                        // tegu on vaikeväärtusega, ning kui meetodile ei anta kaasa sissetulevat väärtust, arvestatakse et väärtuseks on sulgude taha olev ande. Sel juhul 1.5f 
+
+
             //--------------------------------------------------------------------------------//
 
             /*           ---===         N Ä I T E Ü L E S A N N E D        ===---            */
@@ -703,7 +816,7 @@ namespace KamosevaLOGITge25KonspektKordaTehtud // <-- nimeruum, sisaldab {} sulg
             {
                 Console.WriteLine($"Tehte tulemus on: {arv1} {tehteTüüp} {arv2} = {tulemus}");
             }
-            
+
             */
 
 
@@ -853,7 +966,55 @@ namespace KamosevaLOGITge25KonspektKordaTehtud // <-- nimeruum, sisaldab {} sulg
             // "yks taht on yle" - kasutajale kuvav tekst
             // ; lõpetab käsurea/lause
             */
+        
+       
 
+        Console.WriteLine("palun sisesta esimene arv");
+            float arv1 = 0.0f;
+            arv1 = float.Parse(Console.ReadLine());
+
+            Console.WriteLine("palun sisesta teine arv");
+            float arv2 = 0.0f;
+            arv2 = float.Parse(Console.ReadLine());
+
+            Console.WriteLine("mis tüüpi tehet sa teha tahad? (valik: + - * / ^ v)");
+            string tehtetüüp = "";
+            tehtetüüp = Console.ReadLine();
+
+            double tehtetulemus = 0.0d;
+
+            if (tehtetüüp != "")
+            {
+                switch (tehtetüüp)
+                {
+                    default:
+                        Console.WriteLine("tehtetüüp pole valitud, tehet ei sooritata.");
+                        break;
+                    case "+":
+                        tehtetulemus = Liitmine(arv1, arv2); // meetod kõige alguses
+                        break;
+                    case "-":
+                        tehtetulemus = arv1 - arv2;
+                        break;
+                    case "/":
+                        tehtetulemus = arv1 / arv2;
+                        break;
+                    case "*":
+                        tehtetulemus = arv1 * arv2;
+                        break;
+                    case "^":
+                        tehtetulemus = Math.Pow(arv1, arv2);
+                        break;
+                    case "v":
+                        tehtetulemus = Math.Pow(arv1, (1 / arv2));
+                        break;
+                }
+                Console.WriteLine($"tehte tulemus on: {arv1} {tehtetüüp} {arv2} = {tehtetulemus}");
+            }
+            else
+            {
+                Console.WriteLine("tehtetüüp pole valitud, tehet ei sooritata.");
+            }   
         }
     }
 }
