@@ -533,6 +533,57 @@ namespace KamosevaLOGITge25KonspektKordaTehtud // <-- nimeruum, sisaldab {} sulg
             string kuulusKeiser2 = $"{eesnimi} {perekonnanimi} oli maaila kuulsaim {amet}";
             Console.WriteLine(kuulusKeiser2);
 
+            /*  -= F A I L I O P E R A T S I O O N I D  =-  */
+            // Kui programmil on vaja oma too tulemust salvestada voi lugeda mingeid andmeid sisse mis ei parine kasutajalt ega programmilt endalt, on voimalus need andmed sisse
+            // lugeda failist voi siis talletada andmeid failis.
+            // Failioperatsioonide tegemiseks on vaja kasutada usinguna Systeemi in-out operatsioone, see tuleb moodulist SystemIo
+
+            /* LUGEMINE */
+
+            string loetudFailiSisu = File.ReadAllText("failinimi.txt");
+            //ReadAllText("failinimi.laiend") - loed=b kirjeldatud failist, mis asub programmiga tapselt samas kaustas, kogu sisu tekstina
+            string[] loetudFailiSisu2 = File.ReadAllLines("failinimi.txt");
+            //ReadAllLines("failinimi.laiend") - loeb kirjeldatud failist, mis asub programmiga tapselt samas kaustas, kogu sisu stringide jarjendina kus iga element on yks rida kogu failist.
+            byte[] loetudFailiBaidid = File.ReadAllBytes("failinimi.txt");
+            //ReadAllBytes(failinimi.txt) - loeb kirjeldatud failist, mis asub programmiga tapselt samas kaustas, kogu sisu baitidena.
+
+            /* KIRJUTAMINE */
+            File.WriteAllText("/valjund.txt", loetudFailiSisu);
+            //WriteAllText("/kaust/valjundfail.laiend", "sisu mida kirjutada") - kirjutab kindlasse asukohta, mis asub esimese parameetri sees, faili kus on tekst, mis asub teise parameetri sees
+            File.WriteAllLines("/valjund2.txt", loetudFailiSisu2);
+            //WriteAllText("/kaust/valjundfail2.laiend", "sisu jarjendis mida kirjutada") - kirjutab kindlasse asukohta, mis asub esimese parameetri sees, faili kus on sisu stringide jarjendis, 
+            // mis asub teise parameetri sees
+            File.WriteAllBytes("valjundbaidid.txt", loetudFailiBaidid);
+            //WriteAllText("/kaust/valjundfailbaidid.laiend", "sisu baidijarjendis mida kirjutada") - kirjutab kindlasse asukohta, mis asub esimese parameetri sees, faili mis koosneb jarjendis
+            // olevatest baitidest, mis asub teise parameetri sees
+
+            //Koik kirjutusmeetodid kirjutavad vaikimisi juba samanimelise eksisteeriva faili yle, kui fail eksisteerib
+            // Kui fail ei eksisteeri, see tekitatakse
+
+            /* MUUD */
+
+            File.Exists("/valjund.txt");
+            //Exists("valjund.txt.laiend") - kontrollib kas selles asukohas on olemas sellise nimega ja sellise laiendiga fail.
+            // Kui on, tagastab "true", kui ei ole, tagastab "false"
+
+            File.Delete("/valjund.txt");
+            // Kustutab faili. kui see olemas
+
+            File.Create("/valjund.txt");
+            // Create tekitab uue tyhja faili, valitud asukoha ja laiendiga. Kui see fail juba eksisteerib, siis olemasolev fail tyhjendatakse
+
+            File.Copy("/valjund.txt", "valjundCopy.txt", false);
+            // Copy("/valjund.txt", "valjundCopy.txt") - Kopeerib uue samasuguse faili
+
+            File.Copy("/valjund.txt", "valjundCopy.txt", false);
+            // Copy("/valjund.txt", "valjundCopy.txt", false) - Kopeerib uue samasuguse faili. Kui fail jub olemas, siis false puhul on ylekirjutamine keelatud, true puhul lubatud
+
+            File.Replace("/valjund.txt", "/sihtfail.txt", "/sihtfailBackup.txt");
+            // Replace asendab esimeses parameetris oleva faili sisu, kurjutab uue faili, teise parameetri asukohta, kustutades originaalse faili, ja asetab ka backup faili
+
+            File.AppendText("/valjund.txt");
+            
+
 
 
             /*      ---=== M E E T O D I D ===---       */
@@ -966,10 +1017,10 @@ namespace KamosevaLOGITge25KonspektKordaTehtud // <-- nimeruum, sisaldab {} sulg
             // "yks taht on yle" - kasutajale kuvav tekst
             // ; lõpetab käsurea/lause
             */
-        
-       
 
-        Console.WriteLine("palun sisesta esimene arv");
+
+
+            Console.WriteLine("palun sisesta esimene arv");
             float arv1 = 0.0f;
             arv1 = float.Parse(Console.ReadLine());
 
